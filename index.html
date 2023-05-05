@@ -18,7 +18,7 @@
             font-kerning: none
         }
     </style>
-    <script src="js/switchHandler.js"></script>
+    <script src="js/switchHandler.ts"></script>
 </head>
 <body>
     <p>Das Komitee zur Ausrottung von Unlogik hat eine Bombe gelegt. Die Bombe hat 7 Kippschalter, und es ist ein Zettel angeheftet:</p>
@@ -41,12 +41,12 @@
         <li>Wenn Schalter 2 ,3 und 5 unten stehen, knallt's</li>
         <li>Sind die Schalter 1 und 2 oben und die Schalter 5 und 7 unten, knallt's</li>
     </ol>
-    <img id="switch1" src="icons/switch-on.png" onclick="switchClicked(event)" />
-    <img id="switch2" src="icons/switch-on.png" onclick="switchClicked(event)" />
-    <img id="switch3" src="icons/switch-on.png" onclick="switchClicked(event)" />
-    <img id="switch4" src="icons/switch-on.png" onclick="switchClicked(event)" />
-    <img id="switch5" src="icons/switch-on.png" onclick="switchClicked(event)" />
-    <img id="switch6" src="icons/switch-on.png" onclick="switchClicked(event)" />
-    <img id="switch7" src="icons/switch-on.png" onclick="switchClicked(event)" />
+    <img id="switch1" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <img id="switch2" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <img id="switch3" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <img id="switch4" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <img id="switch5" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <img id="switch6" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <img id="switch7" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
 </body>
 </html>
