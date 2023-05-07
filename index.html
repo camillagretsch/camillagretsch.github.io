@@ -7,46 +7,102 @@
     <meta name="Generator" content="Cocoa HTML Writer">
     <meta name="CocoaVersion" content="2202.7">
     <style type="text/css">
-        p.p1 {
-            margin: 0.0px 0.0px 0.0px 0.0px;
-            font: 12.0px Times;
-            color: #000000;
-            -webkit-text-stroke: #000000
+        body {
+            padding: 0.5em;
+        }
+        .content {
+            display: block;
+            width: max-content;
+            background-color: white;
         }
 
-        span.s1 {
-            font-kerning: none
+        .centerWrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .schalterWrapper {
+            display: grid;
+            font-weight: bold;
+            justify-items: center;
+            align-items: center;
+            grid-gap: 0.5em;
+            
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 0.25em;
+        }
+        
+        .sticky-note {
+            width: 25%;
+            padding: 1em;
+            border: 1px solid #ddd;
+            background-color: #feffdd;
+            box-shadow: 7px 7px 7px rgba(0,0,0,.1);
+            margin: 0;
         }
     </style>
-    <script src="js/switchHandler.ts"></script>
 </head>
 <body>
-    <p>Das Komitee zur Ausrottung von Unlogik hat eine Bombe gelegt. Die Bombe hat 7 Kippschalter, und es ist ein Zettel angeheftet:</p>
-    <p>Die Bombe wird genau um 12 Uhr explodieren, wenn die Kippschalter nicht vorher in die richtige Stellung gebracht werden.</p>
-    <p>Sie müssen die Bombe entschärfen und dazu die Schalter in die richtige Stellung bringen. Es ist 10 vor 12!</p>
-    <ol>
-        <li>Wenn 6 und 7 beide unten sind, knallt's</li>
-        <li>Wenn Schalter 3 oben sowie 2 und 4 unten stehen, knallt's</li>
-        <li>Wenn 1 und 4 unten sowie 7 oben stehen, knallt's</li>
-        <li>Wenn 1, 3 und 4 unten stehen, knallt's</li>
-        <li>Wenn 6 unten sowie 2 und 3 oben stehen, knallt's</li>
-        <li>Wenn 4 und 3 oben stehen, knallt's</li>
-        <li>Wenn 6 oben steht und wenn, sofern 7 oben steht, auch 1 oben steht, knallt's</li>
-        <li>Wenn 1 und 5 oben sowie 7 unten stehen, knallt's</li>
-        <li>Wenn 3 unten sowie 4 und 5 oben stehen, knallt's</li>
-        <li>Wenn 1 und 7 oben stehen, knallt's</li>
-        <li>Wenn 5 unten und wenn, sofern 2 und 6 oben stehen, auch 3 oben stehen, knallt's</li>
-        <li>Wenn 7 unten sowie 3 oder 4 oben stehen, knallt's</li>
-        <li>Wenn Schalter 6 und 7 unterschiedliche Stellungen haben, knallt's</li>
-        <li>Wenn Schalter 2 ,3 und 5 unten stehen, knallt's</li>
-        <li>Sind die Schalter 1 und 2 oben und die Schalter 5 und 7 unten, knallt's</li>
-    </ol>
-    <img id="switch1" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
-    <img id="switch2" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
-    <img id="switch3" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
-    <img id="switch4" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
-    <img id="switch5" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
-    <img id="switch6" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
-    <img id="switch7" src="icons/switch-on.png" onclick="handler.switchClicked(event)" />
+    <div class="content">
+        <p>Das Komitee zur Ausrottung von Unlogik hat eine Bombe gelegt. Die Bombe hat 7 Kippschalter, und es ist ein Zettel angeheftet:</p>
+
+        <div class="centerWrapper">
+            <p class="sticky-note"">Die Bombe wird genau um 12 Uhr explodieren, wenn die Kippschalter nicht vorher in die richtige Stellung gebracht werden.</p>
+        </div>
+
+        <p>Sie müssen die Bombe entschärfen und dazu die Schalter in die richtige Stellung bringen. Es ist 10 vor 12!</p>
+        <ol>
+            <li>Wenn Schalter 6 und 7 unterschiedliche Stellungen haben, knallt's</li>
+            <li>Wenn 6 oder 7 unten ist, knallt's</li>
+
+            <li>Wenn keiner von 1, 3 oder 4 oben steht, knallt's</li>
+            
+            <li>Wenn 6 oben steht und wenn, sofern 7 oben steht, auch 1 oben steht, knallt's</li>
+            <li>Wenn 1 und 7 oben stehen, knallt's</li>
+
+            <li>Wenn 1 und 4 unten sowie 7 oben stehen, knallt's</li>
+            <li>Wenn 4 und 3 oben stehen, knallt's</li>
+            <li>Wenn 3 unten sowie 4 und 5 oben stehen, knallt's</li>
+            <li>Wenn 2, 3 und 5 unten stehen, knallt's</li>
+        </ol>
+
+        <div style="display: flex; justify-content: space-evenly;">
+            <div class="schalterWrapper">
+                <label>Schalter 1</label>
+                <img id="switch1" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>
+            <div class="schalterWrapper">
+                <label>Schalter 2</label>
+                <img id="switch2" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>
+            <div class="schalterWrapper">
+                <label>Schalter 3</label>
+                <img id="switch3" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>
+            <div class="schalterWrapper">
+                <label>Schalter 4</label>
+                <img id="switch4" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>
+            <div class="schalterWrapper">
+                <label>Schalter 5</label>
+                <img id="switch5" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>
+            <div class="schalterWrapper">
+                <label>Schalter 6</label>
+                <img id="switch6" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>
+            <div class="schalterWrapper">
+                <label>Schalter 7</label>
+                <img id="switch7" src="icons/switch-off.png" onclick="handler.switchClicked(event)" />
+            </div>   
+        </div>    
+
+        <div class="centerWrapper">
+            <img id="bombe" src="icons/bombe.png">
+        </div>
+    </div>
 </body>
+<script src="js/switchHandler.ts"></script>
 </html>
