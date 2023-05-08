@@ -13,7 +13,9 @@ class SwitchHandler {
 
     constructor() {
         this.bombeImage = document.getElementById("bombe");
+        this.countdown( "countdown", 0, 5 );
     }    
+
     switchClicked(e) {
         if (e.target.src.includes("switch-off")) {
             e.target.src = "icons/switch-on.png"
@@ -59,6 +61,32 @@ class SwitchHandler {
         } else {
             this.bombeImage.src = "icons/bombe.png"
         }
+    }
+
+    countdown( elementName, minutes, seconds ) {
+        var element, endTime, hours, mins, msLeft, time;
+        
+        function twoDigits( n ) {
+            return (n <= 9 ? "0" + n : n);
+        }
+        
+        function updateTimer() {
+            msLeft = endTime - (+new Date);
+            if ( msLeft < 1000 ) {
+                // element.innerHTML = "Time is up!";
+                document.getElementById("bombe").src = "icons/explode.png"
+            } else {
+                time = new Date( msLeft );
+                hours = time.getUTCHours();
+                mins = time.getUTCMinutes();
+                element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+                setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+            }
+        }
+
+        element = document.getElementById( elementName );
+        endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+        updateTimer();
     }
 }
 

@@ -13,8 +13,7 @@
         }
         .content {
             display: block;
-            width: max-content;
-            background-color: white;
+            width: fit-content;
         }
 
         .centerWrapper {
@@ -43,6 +42,18 @@
             box-shadow: 7px 7px 7px rgba(0,0,0,.1);
             margin: 0;
         }
+
+        #countdown {
+            /* text-align: center; */
+            border: 5px solid #004853;
+            display:inline;
+            padding: 5px;
+            color: #004853;
+            font-family: Verdana, sans-serif, Arial;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+        }
         
         input[type=image]{
             box-shadow: 7px 7px 7px rgba(0,0,0,.1);
@@ -57,13 +68,13 @@
 </head>
 <body>
     <div class="content">
-        <p>Das Komitee zur Ausrottung von Unlogik hat eine Bombe gelegt. Die Bombe hat 7 Kippschalter, und es ist ein Zettel angeheftet:</p>
-
-        <div class="centerWrapper">
-            <p class="sticky-note"">Die Bombe wird genau um 12 Uhr explodieren, wenn die Kippschalter nicht vorher in die richtige Stellung gebracht werden.</p>
+        <div style="display: flex; gap: 2em;">
+            <div>
+                <p>Das Komitee zur Ausrottung von Unlogik hat eine Bombe gelegt. Die Bombe hat 7 Kippschalter, und es ist ein Zettel angeheftet:</p>
+                <p>Sie müssen die Bombe entschärfen und dazu die Schalter in die richtige Stellung bringen. Es ist 10 vor 12!</p>
+            </div>
+            <p class="sticky-note">Die Bombe wird genau um 12 Uhr explodieren, wenn die Kippschalter nicht vorher in die richtige Stellung gebracht werden.</p>
         </div>
-
-        <p>Sie müssen die Bombe entschärfen und dazu die Schalter in die richtige Stellung bringen. Es ist 10 vor 12!</p>
         <ol>
             <li>Wenn Schalter 1 und 7 unten stehen, knallt's</li>
             <li>Wenn Schalter 6 oder 7 unten ist, knallt's</li>
@@ -119,7 +130,8 @@
             </div>   
         </div>    
 
-        <div class="centerWrapper">
+        <div class="centerWrapper" style="justify-content: space-evenly; align-items: center;">
+            <div id="countdown"></div>
             <img id="bombe" src="icons/bombe.png">
         </div>
     </div>
