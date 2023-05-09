@@ -13,7 +13,7 @@ class SwitchHandler {
 
     constructor() {
         this.bombeImage = document.getElementById("bombe");
-        countdown( "countdown", 0, 20 );
+        countdown( "countdown", 10, 0 );
     }    
 
     switchClicked(e) {
